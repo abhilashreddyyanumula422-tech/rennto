@@ -12,22 +12,26 @@ import TenantPaymentScreen from './src/features/payments/screens/TenantPaymentSc
 import TenantProfileScreen from './src/features/users/screens/TenantProfileScreen';
 import OwnerLoginScreen from './src/features/auth/screens/OwnerLoginScreen';
 
+import { LanguageProvider } from './src/utils/LanguageContext';
+
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Onboarding" screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Onboarding" component={OnboardingScreen} />
-        <Stack.Screen name="OwnerRegistration" component={OwnerRegistrationScreen} />
-        <Stack.Screen name="TenantRegistration" component={TenantRegisterScreen} />
-        <Stack.Screen name="TenantVerification" component={TenantVerificationScreen} />
-        <Stack.Screen name="TenantDashboard" component={TenantHomeScreen} />
-        <Stack.Screen name="TenantIssues" component={TenantIssuesScreen} />
-        <Stack.Screen name="TenantPayment" component={TenantPaymentScreen} />
-        <Stack.Screen name="TenantProfile" component={TenantProfileScreen} />
-        <Stack.Screen name="Login" component={OwnerLoginScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <LanguageProvider>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Onboarding" screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+          <Stack.Screen name="OwnerRegistration" component={OwnerRegistrationScreen} />
+          <Stack.Screen name="TenantRegistration" component={TenantRegisterScreen} />
+          <Stack.Screen name="TenantVerification" component={TenantVerificationScreen} />
+          <Stack.Screen name="TenantDashboard" component={TenantHomeScreen} />
+          <Stack.Screen name="TenantIssues" component={TenantIssuesScreen} />
+          <Stack.Screen name="TenantPayment" component={TenantPaymentScreen} />
+          <Stack.Screen name="TenantProfile" component={TenantProfileScreen} />
+          <Stack.Screen name="Login" component={OwnerLoginScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </LanguageProvider>
   );
 }

@@ -4,11 +4,12 @@ import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 interface TenantBottomNavProps {
-  activeTab: 'home' | 'payment' | 'issues' | 'profile';
+  activeTab: 'home' | 'payment' | 'payments' | 'issues' | 'profile';
 }
 
 export default function TenantBottomNav({ activeTab }: TenantBottomNavProps) {
   const navigation = useNavigation<any>();
+  const isPaymentActive = activeTab === 'payment' || activeTab === 'payments';
 
   return (
     <View style={styles.container}>
@@ -30,27 +31,6 @@ export default function TenantBottomNav({ activeTab }: TenantBottomNavProps) {
           ]}
         >
           Home
-        </Text>
-      </TouchableOpacity>
-
-      {/* Payment Tab */}
-      <TouchableOpacity
-        style={styles.tabItem}
-        activeOpacity={0.7}
-        onPress={() => navigation.navigate('TenantPayment')}
-      >
-        <MaterialCommunityIcons
-          name="credit-card-outline"
-          size={22}
-          color={activeTab === 'payment' ? '#6D28D9' : '#94A3B8'}
-        />
-        <Text
-          style={[
-            styles.tabLabel,
-            activeTab === 'payment' && styles.tabLabelActive,
-          ]}
-        >
-          Payment
         </Text>
       </TouchableOpacity>
 
@@ -79,6 +59,27 @@ export default function TenantBottomNav({ activeTab }: TenantBottomNavProps) {
           ]}
         >
           Issues
+        </Text>
+      </TouchableOpacity>
+
+      {/* Payments Tab */}
+      <TouchableOpacity
+        style={styles.tabItem}
+        activeOpacity={0.7}
+        onPress={() => navigation.navigate('TenantPayment')}
+      >
+        <MaterialCommunityIcons
+          name="credit-card-outline"
+          size={22}
+          color={isPaymentActive ? '#6D28D9' : '#94A3B8'}
+        />
+        <Text
+          style={[
+            styles.tabLabel,
+            isPaymentActive && styles.tabLabelActive,
+          ]}
+        >
+          Payments
         </Text>
       </TouchableOpacity>
 

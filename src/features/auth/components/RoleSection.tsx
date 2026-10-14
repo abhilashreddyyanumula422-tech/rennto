@@ -47,9 +47,11 @@ const SelectCard = ({
   return (
     <Pressable
       onPressIn={() => {
+        // eslint-disable-next-line react-hooks/immutability
         scale.value = withTiming(0.96, { duration: 100 });
       }}
       onPressOut={() => {
+        // eslint-disable-next-line react-hooks/immutability
         scale.value = withSpring(1);
         onPress();
       }}
