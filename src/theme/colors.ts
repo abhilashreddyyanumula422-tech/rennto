@@ -1,0 +1,9 @@
+const THEME = {
+  PRIMARY: '#4A00E0',
+  SECONDARY: '#8E2DE2',
+  TEXT_PRIMARY: '#1E1B4B',
+  TEXT_SECONDARY: '#6B7280',
+  BACKGROUND: '#FFFFFF',
+};
+
+export default THEME;
