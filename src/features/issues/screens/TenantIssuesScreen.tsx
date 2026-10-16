@@ -13,7 +13,6 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import TenantBottomNav from '../../dashboard/components/TenantBottomNav';
 import styles from './TenantIssuesScreen.styles';
 
 interface IssueItem {
@@ -304,8 +303,6 @@ export default function TenantIssuesScreen() {
           </TouchableWithoutFeedback>
         </Modal>
 
-        {/* Bottom Navigation */}
-        <TenantBottomNav activeTab="issues" />
       </SafeAreaView>
     </View>
   );

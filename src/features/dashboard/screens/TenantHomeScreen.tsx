@@ -12,7 +12,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather, MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import TenantBottomNav from '../components/TenantBottomNav';
 
 export default function TenantHomeScreen() {
   const navigation = useNavigation<any>();
@@ -183,7 +182,6 @@ export default function TenantHomeScreen() {
             </View>
           ))}
         </ScrollView>
-        <TenantBottomNav activeTab="home" />
       </SafeAreaView>
     </View>
   );

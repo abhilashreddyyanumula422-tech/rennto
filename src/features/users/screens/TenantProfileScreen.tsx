@@ -18,7 +18,6 @@ import {
 } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import TenantBottomNav from '../../dashboard/components/TenantBottomNav';
 import { useLanguage } from '../../../utils/LanguageContext';
 
 export default function TenantProfileScreen() {
@@ -367,8 +366,6 @@ export default function TenantProfileScreen() {
         </View>
       </Modal>
 
-      {/* Bottom Navigation */}
-      <TenantBottomNav activeTab="profile" />
     </View>
   );
 }

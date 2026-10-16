@@ -22,7 +22,6 @@ import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import * as Clipboard from 'expo-clipboard';
 import { useLanguage } from '../../../utils/LanguageContext';
-import TenantBottomNav from '../../dashboard/components/TenantBottomNav';
 
 const { width } = Dimensions.get('window');
 
@@ -698,8 +697,6 @@ const TenantPaymentScreen = () => {
         </View>
       </ScrollView>
 
-      {/* Tenant Bottom Nav Bar */}
-      <TenantBottomNav activeTab="payment" />
 
       {/* More Apps Modal */}
       <Modal
